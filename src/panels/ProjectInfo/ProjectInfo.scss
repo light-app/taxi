@@ -1,0 +1,106 @@
+@import "../../assets/style-tokens/color-palette";
+
+.project-info {
+  margin-top: 60px;
+  padding: 22px 22px 80px 22px;
+
+  &__info-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid $primary;
+    padding: 18px;
+
+    .container {
+      .title {
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .description {
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+
+    .avatar {
+      .img {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        margin-right: 20px;
+        image-rendering: optimizeQuality;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 22px;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 22px;
+    border: 2px solid $primary;
+    border-radius: 5px;
+
+    .detail-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      width: 100%;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 8px;
+      border-bottom: 2px solid $primary;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+      font-size: 12px;
+      font-weight: 400;
+      padding: 8px;
+      border-bottom: 2px solid $primary;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .detail-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      padding: 8px;
+
+      .progress-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        font-size: 12px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

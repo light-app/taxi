@@ -1,0 +1,30 @@
+@import "../../assets/style-tokens/color-palette";
+
+.tasks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 60px;
+  padding: 22px 22px 80px 22px;
+
+  .ant-form {
+    width: 100%;
+
+    .ant-form-item-label
+      > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+      display: none;
+    }
+
+    .avatar {
+      .img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+    }
+  }
+}
