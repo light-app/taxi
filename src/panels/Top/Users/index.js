@@ -3,8 +3,8 @@ import { Button, Tooltip } from "antd";
 import { Router, Redirect } from "@reach/router";
 import { observer } from "mobx-react-lite";
 import { useStores } from "../../../hooks/useStores";
-import { numberToString } from "../../../utils";
 
+import { UserItem } from "./UserItem/index";
 import "./Users.scss";
 
 const mockProject = [
@@ -30,30 +30,31 @@ const Users = observer(() => {
   return (
     <div className="users">
       <div className="users-list">
-        {mockProject.map((item) => {
+        {mockProject.map((item, index) => {
           return (
-            <div className="users-list__item" key={item.id}>
-              <a href={`https://vk.com/id${item.id}`} target="_blank">
-                <img className="img" src={item.img} alt="img" />
-              </a>
+            <UserItem key={item.id} topNumber={index + 1} dataItem={item} />
+            // <div className="users-list__item" key={item.id}>
+            //   <a href={`https://vk.com/id${item.id}`} target="_blank">
+            //     <img className="img" src={item.img} alt="img" />
+            //   </a>
 
-              <div className="item-container">
-                <div className="info">
-                  {item.firstName} {item.firstName}
-                </div>
-                <div className="info description">
-                  {numberToString(item.balance)}$
-                </div>
-                <Button
-                  className="btn primary"
-                  onClick={() =>
-                    PanelStore.setActivePanel("/project-id", item.id)
-                  }
-                >
-                  Украсть чаевые
-                </Button>
-              </div>
-            </div>
+            //   <div className="item-container">
+            //     <div className="info">
+            //       {item.firstName} {item.firstName}
+            //     </div>
+            //     <div className="info description">
+            //       {numberToString(item.balance)}$
+            //     </div>
+            //     <Button
+            //       className="btn primary"
+            //       onClick={() =>
+            //         PanelStore.setActivePanel("/project-id", item.id)
+            //       }
+            //     >
+            //       Украсть чаевые
+            //     </Button>
+            //   </div>
+            // </div>
           );
         })}
       </div>
