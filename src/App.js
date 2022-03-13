@@ -61,6 +61,8 @@ const App = observer(() => {
   //   console.log("UserStore groups", toJS(UserStore.groups));
   // }, [UserStore.token, UserStore.groups]);
 
+  console.log("routeUrl", routeUrl);
+
   return (
     <>
       <Router basepath={routeUrl === "" ? "/" : routeUrl}>
@@ -70,11 +72,7 @@ const App = observer(() => {
         <Tasks path="tasks" />
         <ProjectInfo path="project-id/:page" />
         <CoinInfo path="coin-id/:page" />
-        <Redirect
-          from={routeUrl === "" ? "/" : routeUrl}
-          to={`${routeUrl}/profile`}
-          noThrow
-        />
+        <Redirect from="/" to={`${routeUrl}/profile`} noThrow />
       </Router>
       <Footer />
 
