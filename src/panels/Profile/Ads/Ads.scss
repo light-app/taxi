@@ -1,0 +1,58 @@
+@import "../../../assets/style-tokens/color-palette";
+
+.ads {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 10px;
+  width: 80%;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 24px 24px 48px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 16px;
+  height: auto;
+  margin-top: 20px;
+
+  &-text {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 14px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: $green;
+    }
+  }
+
+  &-description {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 10px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      color: $green;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
