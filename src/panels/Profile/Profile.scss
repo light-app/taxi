@@ -13,46 +13,18 @@
     width: 100%;
     padding: 22px 22px 80px 22px;
 
-    .coins {
-      width: 100%;
-      height: 100%;
-      border: 2px solid $primary;
-      border-bottom: none;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-      margin-top: 34px;
-      padding: 12px 22px 22px 22px;
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
 
-      &__separator {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-bottom: 12px;
-
-        span {
-          width: 100px;
-          height: 6px;
-          border-radius: 5px;
-          background-color: $primary;
-        }
-      }
-
-      &__title {
-        font-size: 20px;
-        margin-bottom: 12px;
-      }
-
-      &__search {
-        input {
-          border-color: $primary;
-          border-radius: 5px;
-        }
-      }
-
-      &__list {
-        margin-top: 24px;
+      &-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        box-shadow: 24px 24px 48px rgba(0, 0, 0, 0.5);
+        object-fit: cover;
       }
     }
   }
