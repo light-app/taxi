@@ -91,3 +91,35 @@ export async function getApiMethod(token) {
     })
     .catch((err) => {});
 }
+
+// Рекламный видеоролик
+export function nativeAds() {
+  return bridge
+    .send("VKWebAppShowNativeAds", {
+      ad_format: "preloader",
+    })
+    .then((res) => console.log("VKWebAppShowNativeAds RES", res))
+    .catch((err) => console.log("VKWebAppShowNativeAds ERR", err));
+}
+
+// Рекламный баннер
+export function adsBanner() {
+  bridge
+    .send("VKWebAppGetAds")
+    .then((promoBannerProps) => {
+      console.log("promoBannerProps 1", promoBannerProps);
+      console.log("promoBannerProps 2", { promoBannerProps });
+      setPromoBannerProps({
+        title: promoBannerProps.title,
+        domain: promoBannerProps.domain,
+        trackingLink: promoBannerProps.trackingLink,
+        ctaText: promoBannerProps.ctaText,
+        advertisingLabel: promoBannerProps.advertisingLabel,
+        iconLink: promoBannerProps.iconLink,
+        description: promoBannerProps.description,
+        ageRestrictions: promoBannerProps.ageRestrictions,
+        statistics: promoBannerProps.statistics,
+      });
+    })
+    .catch((err) => console.log("promoBannerProps ERR", err));
+}
