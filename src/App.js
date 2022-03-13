@@ -13,20 +13,12 @@ import "./ws/connection.js";
 import "antd/dist/antd.css";
 import "./index.scss";
 
-import {
-  Top,
-  Exchange,
-  ProjectInfo,
-  Profile,
-  CoinInfo,
-  Tasks,
-  ParentComponent,
-} from "./panels";
+import { Top, Profile, Tasks, ParentComponent } from "./panels";
 
 import { observer } from "mobx-react-lite";
 import { useStores } from "./hooks/useStores";
 
-import { SocketManager } from "./utils";
+import { nativeAds } from "./utils";
 import { BASE_WS_URL } from "./api/consts";
 
 import { vkValidationParams } from "./constants";
@@ -61,17 +53,19 @@ const App = observer(() => {
   //   console.log("UserStore groups", toJS(UserStore.groups));
   // }, [UserStore.token, UserStore.groups]);
 
-  console.log("routeUrl", routeUrl);
+  useEffect(() => {
+    nativeAds();
+  }, []);
 
   return (
     <>
       <Router basepath={routeUrl === "" ? "/" : routeUrl}>
         <Top path="top" />
-        <Exchange path="exchange" />
+        {/* <Exchange path="exchange" /> */}
         <Profile path="profile" />
         <Tasks path="tasks" />
-        <ProjectInfo path="project-id/:page" />
-        <CoinInfo path="coin-id/:page" />
+        {/* <ProjectInfo path="project-id/:page" /> */}
+        {/* <CoinInfo path="coin-id/:page" /> */}
         <Redirect from="/" to={`${routeUrl}/profile`} noThrow />
       </Router>
       <Footer />
